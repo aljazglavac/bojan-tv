@@ -1,1 +1,1 @@
-@reboot sleep 60 && /home/pi/bojan-tv/download.sh
+@reboot sleep 60 && /home/pi/bojan-tv/download.sh && /home/pi/bojan-tv/sync.sh
