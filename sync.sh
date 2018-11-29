@@ -4,6 +4,9 @@
 LOCAL='/home/pi/tv/local.txt'
 REMOTE='/home/pi/tv/remote.txt'
 
+# path to MEDIA
+MEDIA='/home/pi/tv/MEDIA/'
+
 # paths to local MEDIA and remote files aka .listing
 LPATH='/home/pi/tv/MEDIA/'
 RPATH='/home/pi/tv/MEDIA/.listing'
@@ -29,17 +32,13 @@ fi
 # find and delete files that are in local storage but not on remote 
 while read -r local <&3; do
 	found=false
-	echo "iscem" $local
   while read -r remote <&4; do
-	echo $remote
 	if [ "$local" = "$remote" ]; then
 		found=true	
-		echo $remote
 	fi
   done 4<$REMOTE
 	if [ $found = false ]; then
-		#rm $LPATH$local -f
-		echo "brisem" $local
+		rm $MEDIA$local -f
 	fi
 done 3<$LOCAL
 
