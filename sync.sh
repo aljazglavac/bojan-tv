@@ -17,7 +17,6 @@ rval=$?
 if [ $rval -ne 0 ]; then
     echo "Error: ls with core: " $rval >> $ELOG
 fi
-exit $rval
 
 # remote path listig
 cat $RPATH | tail -n +3 | rev | cut -d ' ' -f 1 | rev > $REMOTE
@@ -26,23 +25,26 @@ rval=$?
 if [ $rval -ne 0 ]; then
     echo "Error: cat with core: " $rval >> $ELOG
 fi
-exit $rval
 
 # find and delete files that are in local storage but not on remote 
 while read -r local <&3; do
 	found=false
+	echo "iscem" $local
   while read -r remote <&4; do
+	echo $remote
 	if [ "$local" = "$remote" ]; then
 		found=true	
+		echo $remote
 	fi
   done 4<$REMOTE
-	if !  $found; then
-		rm $LPATH$local -f
+	if [ $found = false ]; then
+		#rm $LPATH$local -f
+		echo "brisem" $local
 	fi
 done 3<$LOCAL
 
 rval=$?
 if [ $rval -ne 0 ]; then
-    echo "Error: synx with core: " $rval >> $ELOG
+    echo "Error: sync with core: " $rval >> $ELOG
 fi
-exit $rval
+exit 0
