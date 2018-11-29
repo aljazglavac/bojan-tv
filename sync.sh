@@ -19,7 +19,7 @@ if [ $rval -ne 0 ]; then
 fi
 
 # remote path listig
-cat $RPATH | tail -n +3 | rev | cut -d ' ' -f 1 | rev > $REMOTE
+cat $RPATH | tail -n +3 | rev | cut -d ' ' -f 1 | rev | tr -d '\r' > $REMOTE
 
 rval=$?
 if [ $rval -ne 0 ]; then
