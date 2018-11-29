@@ -1,0 +1,2 @@
+@reboot sleep 60 && /home/pi/bojan-tv/download.sh && /home/pi/bojan-tv/sync.sh
+*/15 * * * * /home/pi/bojan-tv/screenshot.sh >> /home/pi/Documents/ss.log

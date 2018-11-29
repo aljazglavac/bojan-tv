@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=TV
+Exec=/home/pi/bojan-tv/player.sh
+Type=application
+
