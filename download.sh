@@ -3,7 +3,7 @@
 # ftp
 HOST='ftpupload.net'
 USER='b14_23069204'
-PASS='zelenamandarina21'
+PASS=$(/bin/cat /home/pi/bojan-tv/.password)
 
 # paths to remote and destination dirs
 RLOC='/htdocs/tv/*'
