@@ -7,10 +7,11 @@ VIDEOPATH="/home/pi/tv/MEDIA"
 VLOG='/home/pi/Documents/player.log'
 
 # timeout for feh and sleep
+SEC=10
 MINUTE=60
 
 # wait so media is downloaded
-sleep $MINUTE 
+sleep $MINUTE
 
 while true; do
         for entry in $VIDEOPATH/*
@@ -25,23 +26,23 @@ while true; do
 				fi
 				if [ "${entry##*.}" = "jpg" ]; then
 					echo $(date) $(basename "$entry") >> $VLOG 2>&1
-					timeout $MINUTE*5 feh -F -Y -Z -x $entry >> $VLOG 2>&1
+					timeout $SEC feh -F -Y -Z -x $entry >> $VLOG 2>&1
 				fi
 				if [ "${entry##*.}" = "png" ]; then
 					echo $(date) $(basename "$entry") >> $VLOG 2>&1
-					timeout $MINUTE*5 feh -F -Y -Z -x $entry >> $VLOG 2>&1
+					timeout $SEC feh -F -Y -Z -x $entry >> $VLOG 2>&1
 				fi
 				if [ "${entry##*.}" = "jpeg" ]; then
 					echo $(date) $(basename "$entry") >> $VLOG 2>&1
-					timeout $MINUTE*5 feh -F -Y -Z -x $entry >> $VLOG 2>&1
+					timeout $SEC feh -F -Y -Z -x $entry >> $VLOG 2>&1
 				fi
 				if [ "${entry##*.}" = "JPG" ]; then
 					echo $(date) $(basename "$entry") >> $VLOG 2>&1
-					timeout $MINUTE*5 feh -F -Y -Z -x $entry >> $VLOG 2>&1
+					timeout $SEC feh -F -Y -Z -x $entry >> $VLOG 2>&1
 				fi
 				if [ "${entry##*.}" = "PNG" ]; then
 					echo $(date) $(basename "$entry") >> $VLOG 2>&1
-					timeout $MINUTE*5 feh -F -Y -Z -x $entry >> $VLOG 2>&1
+					timeout $SEC feh -F -Y -Z -x $entry >> $VLOG 2>&1
 				fi
         done
 done
