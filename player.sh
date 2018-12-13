@@ -13,6 +13,15 @@ MINUTE=60
 # wait so media is downloaded
 sleep $MINUTE
 
+# check if VIDEOPATH is empty
+if [ "$(ls -A $VIDEOPATH)" ]; then
+     echo "Playing videos and photos inside $VIDEOPATH" >> $VLOG 2>&1
+else
+		 exit 0;
+fi
+
+# play videos/photos in infinite loop
+
 while true; do
         for entry in $VIDEOPATH/*
         do
