@@ -1,12 +1,21 @@
 #!/bin/bash
 
+
+#HOST='ftpupload.net'
+#USER='b14_23069204'
+#PASS=$(/bin/cat /home/pi/bojan-tv/.password)
+
+# paths to remote and destination dirs
+#RLOC='/htdocs/tv/*'
+#DLOC='/home/pi/tv/MEDIA/'
+
 # ftp
-HOST='ftpupload.net'
-USER='b14_23069204'
+HOST='ftp.drivehq.com '
+USER='ftptv'
 PASS=$(/bin/cat /home/pi/bojan-tv/.password)
 
 # paths to remote and destination dirs
-RLOC='/htdocs/tv/*'
+RLOC='./tv/*'
 DLOC='/home/pi/tv/MEDIA/'
 
 # log files
@@ -19,6 +28,6 @@ wget -Nc --ftp-user=$USER --ftp-password=$PASS ftp://$HOST$RLOC --directory-pref
 # test if wget returned any errors
 retval=$?
 if [ $retval -ne 0 ]; then
-    echo "Error: wget with core: " $retval >> $ELOG
+    echo "Error: wget with code: " $retval >> $ELOG
 fi
 exit $retval
