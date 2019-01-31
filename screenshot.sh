@@ -1,18 +1,18 @@
 #!/bin/bash
 
-#HOST='ftpupload.net'
-#USER='b14_23069204'
-#PASS='zelenamandarina21'
-#DEST='/home/pi/tv/MEDIA/'
-#REMOT='./htdocs/ss/'
-#LPATH='/home/pi/Pictures/'
-
-HOST='ftp.drivehq.com '
-USER='ftptv'
-PASS=$(/bin/cat /home/pi/bojan-tv/.password)
+HOST='ftpupload.net'
+USER='b14_23069204'
+PASS='zelenamandarina21'
 DEST='/home/pi/tv/MEDIA/'
-REMOT='./ss/'
+REMOT='./htdocs/ss/'
 LPATH='/home/pi/Pictures/'
+
+#HOST='ftp.drivehq.com '
+#USER='ftptv'
+#PASS=$(/bin/cat /home/pi/bojan-tv/.password)
+#DEST='/home/pi/tv/MEDIA/'
+#REMOT='./ss/'
+#LPATH='/home/pi/Pictures/'
 
 TIMESTAMP=$(date +"%Y-%m-%d-%H-%M")
 
