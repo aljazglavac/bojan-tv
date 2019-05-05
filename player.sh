@@ -13,6 +13,10 @@ MINUTE=60
 # wait so media is downloaded
 sleep $MINUTE
 
+# setup display
+tvservice -p
+fbset -accel true; fbset -accel false
+
 # check if VIDEOPATH is empty
 if [ "$(ls -A $VIDEOPATH)" ]; then
      echo "Playing videos and photos inside $VIDEOPATH" >> $VLOG 2>&1
@@ -27,11 +31,11 @@ while true; do
         do
 				if [ "${entry##*.}" = "mp4" ]; then
 					echo $(date) $(basename "$entry") >> $VLOG 2>&1
-					omxplayer -o hdmi $entry >> $VLOG 2>&1
+					omxplayer -b $entry >> $VLOG 2>&1
 				fi
 				if [ "${entry##*.}" = "mov" ]; then
 					echo $(date) $(basename "$entry") >> $VLOG 2>&1
-					omxplayer -o hdmi $entry >> $VLOG 2>&1
+					omxplayer -b $entry >> $VLOG 2>&1
 				fi
 				if [ "${entry##*.}" = "jpg" ]; then
 					echo $(date) $(basename "$entry") >> $VLOG 2>&1
