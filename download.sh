@@ -1,12 +1,12 @@
 #!/bin/bash
 
 
-HOST='ftpupload.net'
-USER='b14_23069204'
+HOST='ftp.jazzhram.si'
+USER='tv-ftp@jazzhram.si'
 PASS=$(/bin/cat /home/pi/bojan-tv/.password)
 
 # paths to remote and destination dirs
-RLOC='/htdocs/tv/*'
+RLOC='./media/*'
 DLOC='/home/pi/tv/MEDIA/'
 
 # ftp
