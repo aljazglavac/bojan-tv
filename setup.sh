@@ -5,7 +5,9 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-apt-get install ftp feh omxplayer -y
+apt-get update -y
+apt-get upgrade -y
+apt-get install ftp feh omxplayer supervisor -y
 curl -sL https://raw.githubusercontent.com/AndrewFromMelbourne/raspi2png/master/installer.sh | bash -
 echo '\nnetwork={\n\tssid="KRAS"\n\tpsk="inetkras"\n}\n' >> /etc/wpa_supplicant/wpa_supplicant.conf
 crontab /home/pi/bojan-tv/mycron
