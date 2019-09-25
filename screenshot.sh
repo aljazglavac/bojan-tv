@@ -1,19 +1,11 @@
 #!/bin/bash
 
-HOST='ftpupload.net'
-USER='b14_23069204'
-PASS='zelenamandarina21'
+HOST='ftp.jazzhram.si'
+USER='tv-ftp@jazzhram.si'
+PASS=$(/bin/cat /home/pi/bojan-tv/.password)
 DEST='/home/pi/tv/MEDIA/'
-REMOT='./htdocs/ss/'
+REMOT='./tv1/' # SPREMENI GLEDE NA TV!!! tv1, tv2, tv3
 LPATH='/home/pi/Pictures/'
-
-#HOST='ftp.drivehq.com '
-#USER='ftptv'
-#PASS=$(/bin/cat /home/pi/bojan-tv/.password)
-#DEST='/home/pi/tv/MEDIA/'
-#REMOT='./ss/'
-#LPATH='/home/pi/Pictures/'
-
 TIMESTAMP=$(date +"%Y-%m-%d-%H-%M")
 
 # make screenshot of hdmi output
