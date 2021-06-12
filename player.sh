@@ -5,10 +5,11 @@ VIDEOPATH="/home/pi/tv/MEDIA"
 
 # path to log file
 VLOG='/home/pi/Documents/player.log'
+ELOG='/home/pi/Documents/env.log'
 
 # timeout for feh and sleep
 SEC=10
-MINUTE=60
+MINUTE=10
 
 # wait so media is downloaded
 sleep $MINUTE

@@ -2,7 +2,7 @@
 
 
 HOST='ftp.jazzhram.si'
-USER='tv-ftp@jazzhram.si'
+USER='tv@jazzhram.si'
 PASS=$(/bin/cat /home/pi/bojan-tv/.password)
 
 # paths to remote and destination dirs
