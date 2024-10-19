@@ -10,4 +10,16 @@ TIMESTAMP=$(date +"%Y-%m-%d-%H-%M")
 
 nvm install 12 && nvm use 12
 lt --port 22 > $LPATH$TIMESTAMP.txt 2>&1 &
-curl -T $LPATH$TIMESTAMP.txt ftp://$HOST --user $USER:$PASS
+curl -T $REMOT$LPATH$TIMESTAMP.txt ftp://$HOST --user $USER:$PASS
+
+ftp -p -n -v $HOST << EOT
+ascii
+user $USER $PASS
+prompt
+mkdir $REMOT
+cd $REMOT
+mdelete *.txt |yes
+lcd $LPATH
+mput *.txt
+bye
+EOT
